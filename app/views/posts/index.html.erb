@@ -1,0 +1,13 @@
+all posts
+
+<hr />
+
+<% @posts.each do |post| %>
+<div class="row">
+	<div class="span8 well">
+		<%= link_to post.title, post.url %>
+		<%= post.description %>
+		<%= link_to("#{post.comments.size} comments", post_path(post)) %>
+	</div>
+</div>
+<% end %>
